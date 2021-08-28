@@ -10,3 +10,4 @@ wget -P /etc/3proxy/ https://raw.github.com/ITAlexIT/3proxy/master/before.rules
 cp -f user.rules /etc/ufw/
 cp -f user6.rules /etc/ufw/
 cp -f before.rules /etc/ufw/
+/etc/init.d/3proxy start
