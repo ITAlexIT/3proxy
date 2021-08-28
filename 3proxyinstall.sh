@@ -18,7 +18,6 @@ cd /etc/init.d/
 wget --no-check-certificate  https://raw.github.com/ITAlexIT/3proxy/master/3proxy
 chmod  +x /etc/init.d/3proxy
 update-rc.d 3proxy defaults
-
-
-
-/etc/init.d/3proxy start
+wget https://raw.github.com/ITAlexIT/3proxy/master/expect.sh
+chmod +x expect.sh
+./expect.sh
