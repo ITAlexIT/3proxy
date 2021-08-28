@@ -18,6 +18,18 @@ cd /etc/init.d/
 wget --no-check-certificate  https://raw.github.com/ITAlexIT/3proxy/master/3proxy
 chmod  +x /etc/init.d/3proxy
 update-rc.d 3proxy defaults
-wget https://raw.github.com/ITAlexIT/3proxy/master/expect.sh
-chmod +x expect.sh
-./expect.sh
+expect <<END
+        set timeout 3
+        spawn ufw enable
+        expect "Command may disrupt existing ssh connections. Proceed with operation"
+        send -- "y\r"
+        expect eof
+END
+wget -P /etc/3proxy/ https://raw.github.com/ITAlexIT/3proxy/master/user.rules
+wget -P /etc/3proxy/ https://raw.github.com/ITAlexIT/3proxy/master/user.rules
+wget -P /etc/3proxy/ https://raw.github.com/ITAlexIT/3proxy/master/user6.rules
+wget -P /etc/3proxy/ https://raw.github.com/ITAlexIT/3proxy/master/before.rules
+cp -f user.rules /etc/ufw/
+cp -f user6.rules /etc/ufw/
+cp -f before.rules /etc/ufw/
+/etc/init.d/3proxy start
