@@ -1,3 +1,3 @@
 cd /etc/ufw/
-wget --no-check-certificate https://github.com/ITAlexIT/3proxy/raw/master/user.rules
-wget --no-check-certificate https://github.com/ITAlexIT/3proxy/raw/master/user6.rules
+wget --no-check-certificate https://raw.github.com/ITAlexIT/3proxy/master/user.rules
+wget --no-check-certificate https://raw.github.com/ITAlexIT/3proxy/master/user6.rules
