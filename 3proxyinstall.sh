@@ -32,12 +32,8 @@ wget -P /etc/3proxy/ https://raw.github.com/ITAlexIT/3proxy/master/before.rules
 cp -f /etc/3proxy/user.rules /etc/ufw/
 cp -f /etc/3proxy/user6.rules /etc/ufw/
 cp -f /etc/3proxy/before.rules /etc/ufw/
-ufw disable && ufw enable
-expect <<END
-        set timeout 3
-        spawn ufw disable && ufw enable
-        expect "Command may disrupt existing ssh connections. Proceed with operation"
-        send -- "y\r"
-        expect eof
-END
+#ufw disable && ufw enable
 /etc/init.d/3proxy start
+wget -P https://raw.github.com/ITAlexIT/3proxy/master/expect.sh
+chmod  +x expect.sh
+./expect.sh
