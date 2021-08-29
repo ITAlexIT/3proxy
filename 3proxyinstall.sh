@@ -25,7 +25,7 @@ expect <<END
         send -- "y\r"
         expect eof
 END
-wget -P /etc/3proxy/ https://raw.github.com/ITAlexIT/3proxy/master/user.rules
+rm /etc/3proxy/user.rules user.rules.1 user6.rules user6.rules.1 before.rules before.rules.1
 wget -P /etc/3proxy/ https://raw.github.com/ITAlexIT/3proxy/master/user.rules
 wget -P /etc/3proxy/ https://raw.github.com/ITAlexIT/3proxy/master/user6.rules
 wget -P /etc/3proxy/ https://raw.github.com/ITAlexIT/3proxy/master/before.rules
