@@ -45,6 +45,10 @@
 -A ufw6-user-input -p tcp --dport 7171 -j ACCEPT
 -A ufw6-user-input -p udp --dport 7171 -j ACCEPT
 
+### tuple ### allow any 30300 0.0.0.0/0 any 0.0.0.0/0 in
+-A ufw-user-input -p tcp --dport 30300 -j ACCEPT
+-A ufw-user-input -p udp --dport 30300 -j ACCEPT
+
 ### END RULES ###
 
 ### LOGGING ###
